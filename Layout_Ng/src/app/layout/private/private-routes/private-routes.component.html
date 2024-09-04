@@ -9,12 +9,62 @@
 </div>
 <app-footer flexLayout="column" class="footer_Section"></app-footer> -->
 
-<app-header fxLayout="column"></app-header>
+<!-- <app-header fxLayout="column"></app-header>
 <div fxLayout="row" fxFlex class="sidebar-main-screen">
   <div fxFlex="20" class="sidebar_section">
     <app-sidebar fxFlex></app-sidebar>
   </div>
   <div fxFlex="80" class="content">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+<app-footer fxLayout="column" class="footer_Section"></app-footer> -->
+
+<!-- 
+<app-header fxLayout="column"></app-header>
+<div fxLayout="row" fxFlex class="sidebar-main-screen">
+  <button (click)="toggleSidebar()" class="toggle-button">Toggle Sidebar</button>
+  
+  <div fxFlex="20" class="sidebar_section" [class.closed]="isSidebarClosed">
+    <app-sidebar fxFlex></app-sidebar>
+  </div>
+  
+  <div fxFlex="80" class="content" [class.expanded]="isSidebarClosed">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+<app-footer fxLayout="column" class="footer_Section"></app-footer> -->
+
+
+<!-- <app-header fxLayout="column"></app-header>
+<div fxLayout="row" fxFlex class="sidebar-main-screen">
+  <div fxFlex="20" class="sidebar_section" [class.closed]="isSidebarClosed">
+  
+    <button (click)="toggleSidebar()" class="toggle-button">
+      <mat-icon>menu</mat-icon> 
+    </button>
+    <app-sidebar fxFlex></app-sidebar>
+  </div>
+  
+  <div fxFlex="80" class="content" [class.expanded]="isSidebarClosed">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+<app-footer fxLayout="column" class="footer_Section"></app-footer> -->
+
+
+<app-header fxLayout="column"></app-header>
+<div fxLayout="row" fxFlex class="sidebar-main-screen">
+  <!-- Toggle Button always visible -->
+  <button (click)="toggleSidebar()" class="toggle-button">
+    <mat-icon>menu</mat-icon>
+  </button>
+  
+  <div fxFlex="20" class="sidebar_section" [class.closed]="isSidebarClosed">
+    <app-sidebar fxFlex></app-sidebar>
+  </div>
+  
+  <div fxFlex="80" class="content" [class.expanded]="isSidebarClosed">
     <router-outlet></router-outlet>
   </div>
 </div>

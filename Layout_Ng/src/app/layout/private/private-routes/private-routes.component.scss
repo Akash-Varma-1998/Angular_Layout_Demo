@@ -15,6 +15,120 @@
 // .sidebar-main-screen{
 //   display: flex;
 // }
+
+
+// :host {
+//   display: flex;
+//   flex-direction: column;
+//   height: 100%;
+//   width: 100%;
+// }
+
+// .sidebar-main-screen {
+//   display: flex;
+//   flex: 1;
+// }
+
+// .sidebar_section {
+//   margin-top: 60px;
+//   margin-left: 50px;
+//   height: calc(100vh - 60px); /* Full height minus header */
+//   overflow-y: auto; /* Add scroll if content exceeds */
+// }
+
+// .content {
+//   margin-top: 60px;
+//   flex-grow: 1;
+//   overflow-y: auto; /* Allows content area to scroll */
+//   height: calc(100vh - 60px); /* Full height minus header */
+//   transition: margin-left 0.3s ease; /* Smooth transition for expanding */
+// }
+
+
+// .footer_Section {
+//   margin-top: auto;
+// }
+
+// .toggle-button {
+//   // position: absolute;
+//   top: 60px;
+//   // left: 10px;
+//   z-index: 1000;
+//   // background-color: #007bff;
+//   // color: white;
+//   border: none;
+//   padding: 10px;
+//   cursor: pointer;
+// }
+
+// .sidebar_section.closed {
+//   width: 0; /* Hide sidebar */
+//   flex: 0 0 0; /* Prevent it from taking space when closed */
+//   overflow: hidden; /* Hide content when closed */
+// }
+
+
+// .content.expanded {
+//   margin-left: 0; /* Expand content to full width when sidebar is closed */
+// }
+
+
+
+// :host {
+//   display: flex;
+//   flex-direction: column;
+//   height: 100%;
+//   width: 100%;
+// }
+
+// .sidebar-main-screen {
+//   display: flex;
+//   flex: 1;
+// }
+
+// .sidebar_section {
+//   margin-top: 60px;
+//   margin-left: 50px;
+//   height: calc(100vh - 60px); /* Full height minus header */
+//   overflow-y: auto; /* Add scroll if content exceeds */
+//   position: relative; /* Relative positioning for the toggle button */
+// }
+
+// .content {
+//   margin-top: 60px;
+//   flex-grow: 1;
+//   overflow-y: auto; /* Allows content area to scroll */
+//   height: calc(100vh - 60px); /* Full height minus header */
+//   transition: margin-left 0.3s ease; /* Smooth transition for expanding */
+// }
+
+// .footer_Section {
+//   margin-top: auto;
+// }
+
+// .toggle-button {
+//   position: absolute; /* Position the button in the top right */
+//   top: 10px; /* Space from the top */
+//   right: 10px; /* Space from the right */
+//   z-index: 1000;
+//   background-color: transparent; /* Make background transparent */
+//   color: inherit; /* Inherit color from parent */
+//   border: none;
+//   padding: 8px;
+//   cursor: pointer;
+// }
+
+// .sidebar_section.closed {
+//   width: 0; /* Hide sidebar */
+//   flex: 0 0 0; /* Prevent it from taking space when closed */
+//   overflow: hidden; /* Hide content when closed */
+// }
+
+// .content.expanded {
+//   margin-left: 0; /* Expand content to full width when sidebar is closed */
+// }
+
+
 :host {
   display: flex;
   flex-direction: column;
@@ -25,6 +139,7 @@
 .sidebar-main-screen {
   display: flex;
   flex: 1;
+  position: relative; /* Needed to position the toggle button */
 }
 
 .sidebar_section {
@@ -32,15 +147,39 @@
   margin-left: 50px;
   height: calc(100vh - 60px); /* Full height minus header */
   overflow-y: auto; /* Add scroll if content exceeds */
+  transition: width 0.3s ease; /* Smooth transition when sidebar is toggled */
 }
 
 .content {
   margin-top: 60px;
   flex-grow: 1;
+  overflow-y: auto; /* Allows content area to scroll */
   height: calc(100vh - 60px); /* Full height minus header */
-  overflow-y: auto; /* Add scroll if content exceeds */
+  transition: margin-left 0.3s ease; /* Smooth transition for expanding */
 }
 
 .footer_Section {
   margin-top: auto;
+}
+
+.toggle-button {
+  position: absolute; /* Position the button relative to the container */
+  top: 60px; /* Space from the top */
+  // left: 10px; /* Space from the left, always visible */
+  z-index: 1000;
+  background-color: transparent; /* Transparent background for better UI */
+  color: inherit; /* Inherit color from parent */
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.sidebar_section.closed {
+  width: 0; /* Hide sidebar */
+  flex: 0 0 0; /* Prevent it from taking space when closed */
+  overflow: hidden; /* Hide content when closed */
+}
+
+.content.expanded {
+  margin-left: 0; /* Expand content to full width when sidebar is closed */
 }
