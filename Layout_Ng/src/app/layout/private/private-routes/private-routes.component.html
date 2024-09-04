@@ -1,10 +1,21 @@
-<app-header flexLayout="column"></app-header>
-<div flexLayout="row" fxFlex>
-  <div fxFlex="20">
+<!-- <app-header flexLayout="column"></app-header>
+<div flexLayout="row" fxFlex class="sidebar-main-screen">
+  <div fxFlex="20" class="sidebar_section">
     <app-sidebar fxFlex></app-sidebar>
   </div>
   <div fxFlex="80" class="content">
     <router-outlet></router-outlet>
   </div>
 </div>
-<app-footer flexLayout="column" class="footer_Section"></app-footer>
+<app-footer flexLayout="column" class="footer_Section"></app-footer> -->
+
+<app-header fxLayout="column"></app-header>
+<div fxLayout="row" fxFlex class="sidebar-main-screen">
+  <div fxFlex="20" class="sidebar_section">
+    <app-sidebar fxFlex></app-sidebar>
+  </div>
+  <div fxFlex="80" class="content">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+<app-footer fxLayout="column" class="footer_Section"></app-footer>

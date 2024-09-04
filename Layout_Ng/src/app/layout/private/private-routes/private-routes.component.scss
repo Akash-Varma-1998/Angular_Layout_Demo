@@ -1,9 +1,46 @@
+// :host {
+//   display: flex;
+//   flex-direction: column;
+//   height: 100%;
+// }
+
+// .content {
+//   margin-top: 60px;
+// }
+
+// .sidebar_section{
+//   margin-top: 60px;
+// }
+
+// .sidebar-main-screen{
+//   display: flex;
+// }
 :host {
   display: flex;
   flex-direction: column;
   height: 100%;
+  width: 100%;
+}
+
+.sidebar-main-screen {
+  display: flex;
+  flex: 1;
+}
+
+.sidebar_section {
+  margin-top: 60px;
+  margin-left: 50px;
+  height: calc(100vh - 60px); /* Full height minus header */
+  overflow-y: auto; /* Add scroll if content exceeds */
 }
 
 .content {
-  padding: 20px;
+  margin-top: 60px;
+  flex-grow: 1;
+  height: calc(100vh - 60px); /* Full height minus header */
+  overflow-y: auto; /* Add scroll if content exceeds */
+}
+
+.footer_Section {
+  margin-top: auto;
 }
